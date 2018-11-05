@@ -9,8 +9,11 @@ Contract.make {
         }
         body([
                 "name": "marcin",
-                "age": $(regex("[2-9][0-9]"))
+                "age": 17
         ])
+        bodyMatchers {
+            jsonPath('$.age', byRegex("[0-1][0-9]"))
+        }
     }
     response {
         status OK()
@@ -18,7 +21,7 @@ Contract.make {
             contentType(applicationJson())
         }
         body("""
-{ "status": "OK", "name": "marcin" }
+{ "status": "NOT_OK", "surname": "marcin" }
 """)
     }
 }

@@ -18,7 +18,7 @@ Contract.make {
             contentType(applicationJson())
         }
         body("""
-{ "status": "OK", "name": "marcin" }
+{ "status": "OK", "surname": "marcin" }
 """)
     }
 }

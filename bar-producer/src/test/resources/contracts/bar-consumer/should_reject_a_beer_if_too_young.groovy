@@ -11,6 +11,9 @@ Contract.make {
                 "name": "marcin",
                 "age": 17
         ])
+        bodyMatchers {
+            jsonPath('$.age', byRegex("[0-1][0-9]"))
+        }
     }
     response {
         status OK()
