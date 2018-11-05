@@ -7,6 +7,9 @@ import org.assertj.core.api.BDDAssertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
+import org.springframework.cloud.contract.stubrunner.spring.StubRunnerPort;
+import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -16,8 +19,15 @@ import java.net.URI;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@AutoConfigureStubRunner(
+		ids = "com.example:bar-producer",
+		stubsMode = StubRunnerProperties.StubsMode.LOCAL,
+		stubsPerConsumer = true,
+		consumerName = "bar-consumer"
+)
 public class BarConsumerApplicationTests {
 
+	@StubRunnerPort("bar-producer")
 	int port;
 
 	@Test
