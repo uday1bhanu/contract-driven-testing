@@ -97,7 +97,7 @@
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<baseClassForTests>com.example.BeerRestBase</baseClassForTests>
+					<baseClassForTests>com.example.barproducer.BeerRestBase</baseClassForTests>
 				</configuration>
 			</plugin>
 		</plugins>
