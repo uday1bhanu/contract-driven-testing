@@ -10,7 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class BarConsumerApplicationTests {
 
 	@Test
-	public void contextLoads() {
+	public void should_grant_a_beer_if_old_enough(){
+
 	}
 
 }

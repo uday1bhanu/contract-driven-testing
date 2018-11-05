@@ -92,6 +92,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<baseClassForTests>com.example.BeerRestBase</baseClassForTests>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
