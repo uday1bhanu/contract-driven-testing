@@ -6,7 +6,7 @@ import org.junit.Before;
 public abstract class BeerRestBase {
     @Before
     public void setup(){
-        //Add mock implementation
+        //Add mock implementation for controller
         RestAssuredMockMvc.standaloneSetup(
                 new ProducerController(personToCheck -> personToCheck.getAge() >= 20)
         );
